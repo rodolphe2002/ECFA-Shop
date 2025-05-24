@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECFA Shop</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./chat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- 🔹 Barre de navigation -->
+  <nav class="navbar">
+    <div class="logo">ECFA Shop</div>
+    <ul class="nav-links">
+      <li><a href="./index.html">Produits</a></li>
+      <li><a href="./cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+
+      <!-- <li><a href="#chat-widget">Assistance IA</a></li> -->
+    </ul>
+  </nav>
+
+  <!-- 🔹 Barre de recherche -->
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+
+   
+  </section>
+<!-- BANNIÈRE -->
+<section class="banniere">
+  <img src="./img/banniere.jpg" alt="Bannière boutique">
+  <div class="banniere-contenu">
+    <p> Promo Flash : Jusqu’à -30 % sur les chaussures et vêtements cette semaine !</p>
+    <button><a href="#productList">En Savoir Plus</a></button>
+  </div>
+</section>
+
+
+  <!-- 🔹 Onglets de session dynamiques -->
+  <section class="session-tabs" id="sessionTabs">
+    <!-- Onglets générés dynamiquement via JS -->
+    <!-- Exemple :
+    <button class="tab active" data-session-id="123">Vêtements</button>
+    -->
+  </section>
+
+  <!-- 🔹 Liste des produits -->
+  <section class="product-list" id="productList">
+    <!-- Produits générés dynamiquement via JS -->
+    <!-- Exemple de carte produit :
+    <div class="product-card">
+      <img src="/uploads/image.jpg" alt="Produit">
+      <h3>Titre</h3>
+      <p>Description</p>
+      <button>Commander</button>
+    </div>
+    -->
+  </section>
+<!-- 
+<div id="chat-widget">
+  <div id="chat-header">Assistance IA</div>
+  <div id="chat-body"></div>
+  <div id="chat-input">
+    <input type="text" id="userMessage" placeholder="Posez votre question...">
+    <button onclick="sendMessage()">Envoyer</button>
+  </div>
+</div>
+  <button id="toggleChat" onclick="toggleChat()">🗨️</button>
+  <div id="energy-ball"></div> -->
+
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>À propos</h3>
+      <p>Nous sommes une boutique 100 % fiable dédiée à votre satisfaction. Produits testés et approuvés !</p>
+    </div>
+    <div class="footer-section">
+      <h3>Liens rapides</h3>
+      <ul>
+        <li><a href="#productList">Nos Produits</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Suivez-nous</h3>
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1AUKEmCi2k/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 ECFA Shop | Tous droits réservés
+  </div>
+</footer>
+
+
+
+
+
+  <!-- 🔹 Scripts -->
+  <script src="./script.js"></script>
+  <script src="./chat.js"></script>
+</body>
+</html>
