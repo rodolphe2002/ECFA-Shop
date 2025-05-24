@@ -1,5 +1,6 @@
 // API endpoints
-// const baseUrl = 'https://boutique-kbr.onrender.com/api';
+const baseUrl = 'https://ecfa-shop.onrender.com/api';
+// const baseUrl = 'http://localhost:4000/api';
 
 
 // deconnexion
@@ -19,7 +20,7 @@ if (!token) {
   window.location.href = './adminLogin.html'; // redirection vers login
 }
 
-const baseUrl = 'http://localhost:4000/api';
+
 
 function showSection(id) {
   document.querySelectorAll('.admin-section').forEach(section => section.style.display = 'none');
