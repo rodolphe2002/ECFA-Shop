@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     div.className = 'cart-item';
     div.innerHTML = `
       <h3>${item.title}</h3>
-      <img src="/uploads/${item.image}" alt="${item.title}" style="max-width:100px">
+      <img src="${item.image}" alt="${item.title}" style="max-width:100px">
       <p>${item.description}</p>
       <p><strong>Prix unitaire :</strong> ${item.price} FCFA</p>
       <p><strong>Quantité :</strong> ${item.quantity}</p>
@@ -47,14 +47,7 @@ function clearCart() {
   location.reload();
 }
 
-// À développer plus tard : validation réelle de commande
-function validateOrder() {
-  alert('Commande validée (fonctionnalité à développer).');
-}
-
-
-
-
+// Validation de la commande (avec Cloudinary déjà pris en charge dans les URLs d'images)
 async function validateOrder() {
   const name = document.getElementById('clientName').value.trim();
   const phone = document.getElementById('clientPhone').value.trim();
@@ -66,7 +59,6 @@ async function validateOrder() {
     return;
   }
 
-  // Calcul du total
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   try {
@@ -81,7 +73,7 @@ async function validateOrder() {
     if (response.ok) {
       alert("Commande validée avec succès !");
       localStorage.removeItem('cart');
-      location.reload(); // Recharge la page pour rafraîchir le panier
+      location.reload();
     } else {
       alert(data.error || "Erreur lors de la validation de la commande.");
     }
@@ -90,5 +82,3 @@ async function validateOrder() {
     console.error(error);
   }
 }
-
-

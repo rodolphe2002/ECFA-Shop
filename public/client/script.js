@@ -1,6 +1,5 @@
 let currentProducts = []; // Stocke les produits actuellement affichés
 
-
 document.addEventListener('DOMContentLoaded', () => {
   fetchSessions();
 });
@@ -51,7 +50,7 @@ async function fetchProducts(sessionId) {
       card.className = 'product-card';
 
       card.innerHTML = `
-        <img src="/uploads/${product.image}" alt="${product.title}">
+        <img src="${product.image}" alt="${product.title}">
         <h3>${product.title}</h3>
         <p>${product.description}</p>
         <p><strong>${product.price} FCFA</strong></p>
@@ -88,17 +87,9 @@ function addToCart(index) {
   window.location.href = 'cart.html';
 }
 
+// 🔍 Recherche
 
-
-
-
-
-
-// recherche 
-
-
-// Ajoute cet écouteur après le chargement du DOM
-document.getElementById('searchInput').addEventListener('keydown', function(event) {
+document.getElementById('searchInput').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     const query = event.target.value.trim().toLowerCase();
     performSearch(query);
@@ -109,7 +100,6 @@ function performSearch(query) {
   const productList = document.getElementById('productList');
   productList.innerHTML = '';
 
-  // Filtrer currentProducts côté client
   const filtered = currentProducts.filter(product =>
     product.title.toLowerCase().includes(query) ||
     product.description.toLowerCase().includes(query)
@@ -125,7 +115,7 @@ function performSearch(query) {
     card.className = 'product-card';
 
     card.innerHTML = `
-      <img src="/uploads/${product.image}" alt="${product.title}">
+      <img src="${product.image}" alt="${product.title}">
       <h3>${product.title}</h3>
       <p>${product.description}</p>
       <p><strong>${product.price} FCFA</strong></p>
@@ -138,4 +128,3 @@ function performSearch(query) {
     productList.appendChild(card);
   });
 }
-

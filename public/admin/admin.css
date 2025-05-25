@@ -1,224 +1,275 @@
-/* admin.css */
-
-/* RESET BASIQUE */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* COULEURS PRINCIPALES */
+/* 🔥 Design Admin Premium - ECFA Shop */
 :root {
-  --red: #fb5401;
-  --dark-red: #b33d02;
-  --black: #1a1a1a;
-  --dark-gray: #333333;
-  --gray: #777777;
-  --light-gray: #f0f0f0;
-  --white: #ffffff;
+  --primary: #FB5401;
+  --primary-hover: #E04B00;
+  --dark: #0F0F0F;
+  --light: #FAFAFA;
+  --white: #FFFFFF;
+  --gray: #E5E5E5;
+  --text: #2D2D2D;
+  --text-light: #7A7A7A;
+  --glow: 0 0 15px rgba(251, 84, 1, 0.3);
 }
 
-/* CORPS */
+/* 🌌 Base stylisée */
 body {
-  background-color: var(--light-gray);
-  color: var(--black);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: var(--light);
+  color: var(--text);
   min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
 }
 
-/* TITRE PRINCIPAL */
+/* 🚀 Conteneur principal */
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 🔥 Titre principal */
 h1 {
-  color: var(--red);
-  margin-bottom: 25px;
-  font-weight: 700;
-  font-size: 2.5rem;
   text-align: center;
-  text-shadow: 1px 1px 3px var(--dark-red);
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #FB5401 0%, #FF7B00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-/* NAVIGATION */
-nav {
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* 🛡️ Barre de navigation admin */
+.admin-nav {
   display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
-nav button {
-  background-color: var(--red);
+.admin-nav button {
+  background: var(--primary);
   color: var(--white);
   border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(230, 57, 70, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 8px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: var(--glow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-nav button:hover,
-nav button:focus {
-  background-color: var(--dark-red);
-  outline: none;
-  box-shadow: 0 6px 10px rgba(230, 57, 70, 0.7);
+.admin-nav button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(251, 84, 1, 0.4);
 }
 
-/* SECTIONS ADMIN */
+/* 🏢 Sections admin */
 .admin-section {
-  background-color: var(--white);
-  border-radius: 10px;
-  padding: 25px 30px;
-  max-width: 900px;
-  width: 100%;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  margin-bottom: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  display: none; /* Caché par défaut */
 }
 
-.admin-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+.admin-section.active {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .admin-section h2 {
-  color: var(--dark-gray);
-  margin-bottom: 20px;
-  font-weight: 700;
   font-size: 1.8rem;
-  border-bottom: 3px solid var(--red);
-  padding-bottom: 8px;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  padding-bottom: 0.8rem;
+  border-bottom: 3px solid var(--primary);
 }
 
-/* INPUTS & TEXTAREAS & SELECT */
-input[type="text"],
-input[type="number"],
-textarea,
-select {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 18px;
-  border: 2px solid var(--gray);
-  border-radius: 6px;
-  font-size: 1rem;
+/* 📝 Formulaires */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input label {
+  display: block;
+  margin-bottom: 0.5rem;
   font-weight: 500;
-  transition: border-color 0.25s ease;
-  resize: vertical;
-  font-family: inherit;
-  color: var(--black);
+  color: var(--text);
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--red);
-  outline: none;
-  box-shadow: 0 0 6px var(--red);
-}
-
-/* BOUTONS DANS LES SECTIONS */
-.admin-section button {
-  background-color: var(--red);
-  color: var(--white);
-  border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 8px rgba(230, 57, 70, 0.5);
-}
-
-.admin-section button:hover,
-.admin-section button:focus {
-  background-color: var(--dark-red);
-  outline: none;
-  box-shadow: 0 6px 12px rgba(230, 57, 70, 0.7);
-}
-
-/* MESSAGES D'AJOUT */
-#sessionMessage,
-#productMessage {
-  margin-top: 10px;
-  font-weight: 600;
-  color: var(--dark-gray);
-  min-height: 1.3em;
-}
-
-/* LISTE DES COMMANDES */
-#orderList {
-  list-style: none;
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: 10px;
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select,
+  .admin-section button {
+  width: 100%;
+  padding: 1rem;
   border: 1px solid var(--gray);
   border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(251, 84, 1, 0.1);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* 🔘 Boutons */
+button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* 📦 Liste des commandes */
+#orderList {
+  list-style: none;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 #orderList li {
-  padding: 15px 10px;
-  border-bottom: 1px solid var(--light-gray);
-  font-size: 0.95rem;
-  color: var(--dark-gray);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--primary);
 }
 
-#orderList li strong {
-  color: var(--red);
+#orderList strong {
+  color: var(--primary);
   font-size: 1.1rem;
 }
 
-#orderList li select {
-  margin-top: 6px;
-  padding: 6px 10px;
-  border-radius: 5px;
-  border: 1.8px solid var(--gray);
+#orderList select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--gray);
+  margin-top: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#orderList select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* 📊 Statistiques */
+#stats {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--gray);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* 🚪 Bouton de déconnexion */
+.logout-button {
+  background: var(--dark);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.25s ease;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem auto;
 }
 
-#orderList li select:hover,
-#orderList li select:focus {
-  border-color: var(--red);
-  outline: none;
+.logout-button:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* STATISTIQUES */
-#stats p {
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--black);
-  font-size: 1.1rem;
-}
-
-/* CANVAS STYLING */
-/* canvas {
-  margin-top: 15px;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-  background-color: var(--white);
-} */
-
-/* RESPONSIVE */
+/* 📱 Responsive */
 @media (max-width: 768px) {
-  nav {
+  .admin-nav {
     flex-direction: column;
-    gap: 12px;
   }
-
-  nav button {
+  
+  .admin-nav button {
     width: 100%;
   }
-
+  
   .admin-section {
-    padding: 20px;
+    padding: 1.5rem;
   }
 }
 
@@ -226,47 +277,12 @@ select:focus {
   h1 {
     font-size: 2rem;
   }
-
+  
   .admin-section h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
-
-  input[type="text"],
-  input[type="number"],
-  textarea,
-  select,
-  .admin-section button {
-    font-size: 0.9rem;
+  
+  .form-control, .btn {
+    padding: 0.8rem 1rem;
   }
-}
-
-
-
-/* bouton de deconnexion */
-
-
-
-
-.logout-button {
-  background-color: #e74c3c;       /* Rouge vif */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-
-.logout-button:hover {
-  background-color: #c0392b;      /* Rouge un peu plus foncé au survol */
-}
-
-.logout-button:active {
-  background-color: #962d22;      /* Rouge encore plus foncé au clic */
-  box-shadow: none;
-  transform: translateY(2px);
 }

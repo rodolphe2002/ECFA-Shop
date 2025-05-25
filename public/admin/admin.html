@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Boutique</title>
   <link rel="stylesheet" href="./admin.css" /> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <h1>Tableau de bord Admin</h1>
   <button id="logoutBtn" class="logout-button">Déconnexion</button> 
 
   <nav>
-    <button onclick="showSection('create-session')">Créer une session</button>
-    <button onclick="showSection('create-product')">Créer un produit</button>
-    <button onclick="showSection('orders')">Commandes</button>
+    <button class="btn" onclick="showSection('create-session')" >Créer une session</button>
+    <button class="btn" onclick="showSection('create-product')">Créer un produit</button>
+    <button class="btn" onclick="showSection('orders')">Commandes</button>
   </nav>
 
   <section id="create-session" class="admin-section">

@@ -1,113 +1,179 @@
- /* RESET BASIQUE */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+/* 🔥 Design Connexion Admin Premium - ECFA Shop */
+:root {
+  --primary: #FB5401;
+  --primary-hover: #E04B00;
+  --dark: #0F0F0F;
+  --light: #FAFAFA;
+  --white: #FFFFFF;
+  --gray: #E5E5E5;
+  --text: #2D2D2D;
+  --text-light: #7A7A7A;
+  --glow: 0 0 15px rgba(251, 84, 1, 0.3);
+}
 
-    /* COULEURS PRINCIPALES */
-    :root {
-      --red: #fb5401;
-      --dark-red: #b33d02;
-      --black: #1a1a1a;
-      --dark-gray: #333333;
-      --gray: #777777;
-      --light-gray: #f0f0f0;
-      --white: #ffffff;
-    }
+/* 🌌 Base stylisée */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: var(--light);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSI1MCIgc3Ryb2tlPSJyZ2JhKDE1LDE1LDE1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=');
+}
 
-    /* CORPS */
-    body {
-      background-color: var(--light-gray);
-      color: var(--black);
-      min-height: 100vh;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+/* 🔥 Titre principal */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #FB5401 0%, #FF7B00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
 
-    /* TITRE PRINCIPAL */
-    h1 {
-      color: var(--red);
-      margin-bottom: 30px;
-      font-weight: 700;
-      font-size: 2.5rem;
-      text-align: center;
-      text-shadow: 1px 1px 3px var(--dark-red);
-    }
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
 
-    /* FORMULAIRE */
-    form {
-      background-color: var(--white);
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-      display: flex;
-      flex-direction: column;
-    }
+/* 🛡️ Formulaire de connexion */
+#loginForm {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
 
-    label {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--dark-gray);
-    }
+#loginForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--primary);
+}
 
-    input[type="text"],
-    input[type="password"] {
-      padding: 12px 15px;
-      margin-bottom: 20px;
-      border: 2px solid var(--gray);
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: border-color 0.25s ease;
-      font-family: inherit;
-      color: var(--black);
-    }
+#loginForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
 
-    input[type="text"]:focus,
-    input[type="password"]:focus {
-      border-color: var(--red);
-      outline: none;
-      box-shadow: 0 0 8px var(--red);
-    }
+/* 📝 Champs de formulaire */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
 
-    button[type="submit"] {
-      background-color: var(--red);
-      color: var(--white);
-      border: none;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 5px 12px rgba(230, 57, 70, 0.6);
-    }
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
 
-    button[type="submit"]:hover,
-    button[type="submit"]:focus {
-      background-color: var(--dark-red);
-      outline: none;
-      box-shadow: 0 7px 15px rgba(230, 57, 70, 0.8);
-    }
+.form-control {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: var(--light);
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      form {
-        padding: 20px 25px;
-      }
-      input[type="text"],
-      input[type="password"],
-      button[type="submit"] {
-        font-size: 1rem;
-      }
-    }
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(251, 84, 1, 0.1);
+}
+
+/* 🎯 Icônes des champs */
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(50%);
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+/* 🔘 Bouton de connexion */
+.login-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 1.2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: var(--glow);
+}
+
+.login-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(251, 84, 1, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  #loginForm {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  #loginForm {
+    padding: 1.5rem;
+  }
+  
+  .form-control {
+    padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+  }
+}

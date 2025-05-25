@@ -2,19 +2,31 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Connexion Admin</title>
   <link rel="stylesheet" href="./adminLogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
   <h1>Connexion Admin</h1>
   <form id="loginForm">
-    <label>Nom d'utilisateur :</label><br>
-    <input type="text" id="username" required><br><br>
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <i class="fas fa-user input-icon"></i>
+      <input type="text" id="username" class="form-control" required>
+    </div>
 
-    <label>Mot de passe :</label><br>
-    <input type="password" id="password" required><br><br>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <i class="fas fa-lock input-icon"></i>
+      <input type="password" id="password" class="form-control" required>
+    </div>
 
-    <button type="submit">Se connecter</button>
+    <button type="submit" class="login-btn">
+      <i class="fas fa-sign-in-alt"></i> Se connecter
+    </button>
   </form>
 
   <script>
