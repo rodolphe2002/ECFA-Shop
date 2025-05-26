@@ -753,13 +753,20 @@ body {
     padding: 1rem 2rem;
   }
   
-  .product-list {
-    grid-template-columns: 1fr;
-  }
+
   
   .footer-container {
+    /* grid-template-columns: 1fr; */
+     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+
+    .product-list {
     grid-template-columns: 1fr;
   }
+
 }
 
 /* 🛸 Effets 3D et Parallaxe */
