@@ -368,24 +368,40 @@ body {
 
 /* 🪐 Grille de produits futuriste */
 .product-list {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2.5rem;
   padding: 4rem 2rem;
-  max-width: 1600px;
-  margin: 0 auto;
-  height: 700px;
+ 
+  margin: 0 auto; */
+  /* height: 700px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+   max-width: 1600px;
 }
 
 .product-card {
   background: var(--white);
-  border-radius: 16px;
+ 
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  /* position: relative; */
   transform-style: preserve-3d;
   will-change: transform;
+  text-align: center;
+  
+
+
+
+   
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -409,10 +425,20 @@ body {
 
 .product-card img {
   margin-top: 20px;
-  width: 90%;
-  height: 300px;
+  /* width: 90%;  */
+   height: 400px;
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+
+
+  width: 100%;
+ 
+  margin-bottom: 1rem;
+  border-radius: 8px;
+ 
+ 
+  aspect-ratio: 1 / 1; /* force un ratio carré */
 }
 
 .product-card:hover img {
